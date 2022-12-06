@@ -13,7 +13,7 @@ function NewPlaceForm() {
 		cuisines: ''
 	})
 
-	async function handleSubmit(e) {
+	async function handleSubmit(e: { preventDefault: () => void }) {
 		e.preventDefault()
 
 		await fetch(`http://localhost:5000/places`, {
