@@ -1,15 +1,15 @@
 const router = require('express').Router()
-const db = require("../models")
+import db from "../models"
 
 const { User } = db
 
-router.post('/', async (req, res) => {
+router.post('/', async (req: { body: any }, res: { json: (arg0: any) => void }) => {
     const user = await User.create(req.body)
     res.json(user)
 })
 
 
-router.get('/', async (req, res) => {
+router.get('/', async (req: any, res: { json: (arg0: any) => void }) => {
     const users = await User.findAll()
     res.json(users)
 })

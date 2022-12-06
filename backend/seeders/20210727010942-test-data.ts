@@ -2,7 +2,7 @@
 require('dotenv').config()
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  up: async (queryInterface: { bulkInsert: (arg0: string, arg1: { first_name: string; last_name: string; email: string; created_at: Date; updated_at: Date; }[] | { name: string; city: string; state: string; cuisines: string; pic: string; founded: number; created_at: Date; updated_at: Date; }[] | { place_id: any; author_id: any; rant: boolean; stars: number; content: string; created_at: Date; updated_at: Date; }[]) => any; sequelize: { query: (arg0: string) => PromiseLike<[any]> | [any]; }; }, Sequelize: any) => {
 
     await queryInterface.bulkInsert('users', [{
       first_name: 'John',
